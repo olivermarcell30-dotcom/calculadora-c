@@ -1,40 +1,36 @@
-#include <stdio.h>
+##include <stdio.h>
 #include "function_multiplicar.h"
 
-void main() {
-    int opcao; 
-    int continuar;
-    
-    do {
-        printf("\n=== CALCULADORA ===\n");
-        printf("1 - Soma\n");
-        printf("2 - Subtracao\n");
-        printf("3 - Divisao\n");
-        printf("4 - Multiplicacao\n");
-        printf("Escolha uma opcao: ");
-        scanf("%d", &opcao);
-        
-        if (opcao == 4) {
-            int a, b, resultado;
-            printf("Digite o primeiro numero: ");
-            scanf("%d", &a);
+int main()
+    {
+    int input = 0;
+    int num1 = 0;
+    int num2 = 0;
+
+    printf("Calculadora\n\n");
+    printf("1 - Soma\n");
+    printf("2 - Subtracao\n");
+    printf("3 - Divisao\n");
+    printf("4 - Multiplicacao\n\n");
+    printf("--> ");
+    scanf("%d", &input);
+
+    switch(input)
+    {
+        case 4:
+            printf("\n\nDigite o primeiro numero: ");
+            scanf("%d", &num1);
             printf("Digite o segundo numero: ");
-            scanf("%d", &b);
-            
-            resultado = multiplicar(a, b);
-            printf("Resultado: %d * %d = %d\n", a, b, resultado);
-        } else {
-            printf("Opcao indisponivel.\n");
-        }
+            scanf("%d", &num2);
+            printf("O produto e: %d", multiplicar(num1, num2));
+            break;
         
-        printf("\nDeseja fazer outra operacao?\n");
-        printf("1 - Sim\n");
-        printf("0 - Nao\n");
-        printf("Sua escolha: ");
-        scanf("%d", &continuar);
-        
-    } while (continuar == 1);
-    
-    printf("\nFeito por Marcell Augusto (https://github.com/olivermarcell30-dotcom) ");
+        default:
+            printf("Opção indisponível");
+            break;
+    }
+    printf("\nCriado por Marcell Augusto (https://github.com/olivermarcell30-dotcom) ");
 
 }
+    return 0;
+
